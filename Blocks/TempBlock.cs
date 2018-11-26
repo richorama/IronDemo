@@ -18,7 +18,7 @@ namespace IronDemo.Blocks
 
             dynamic result = HttpGet(url).Result;
 
-            return result.main.temp.ToObject<double>();
+            return result.main.temp.ToObject<double>() - 273.15;
         }
 
         static async Task<object> HttpGet(string url)
