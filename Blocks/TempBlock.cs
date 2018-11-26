@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using IronBlock;
+using IronBlock.Blocks;
 using Newtonsoft.Json;
 
 namespace IronDemo.Blocks
@@ -12,7 +13,7 @@ namespace IronDemo.Blocks
     {
         public override object Evaluate(Context context)
         {   
-            var city = this.Values.FirstOrDefault(x => x.Name == "CITY").Block.Evaluate(context);
+            var city = this.Values.Evaluate("CITY", context);
 
             var url = $@"http://api.openweathermap.org/data/2.5/weather?q={city}&appid=6b9c876af988b75ae2dfe34e8b6249c9";
 
