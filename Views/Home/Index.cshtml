@@ -263,7 +263,6 @@ function run(){
     var xml = Blockly.Xml.workspaceToDom(workspace);
     var xmlText = new XMLSerializer().serializeToString(xml);
     send(xmlText, (result) => {
-        console.log(result)
         setOutput(result.currentTarget.responseText);
     })
 }
