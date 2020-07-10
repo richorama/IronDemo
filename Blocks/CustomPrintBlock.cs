@@ -6,12 +6,7 @@ namespace IronDemo.Blocks
 {
     internal class CustomPrintBlock : IBlock
     {
-        public static List<string> Text { get; set; }
-
-        static CustomPrintBlock()
-        {
-            Text = new List<string>();
-        }
+        public List<string> Text { get; } = new List<string>();
 
         public override object Evaluate(Context context)
         {
